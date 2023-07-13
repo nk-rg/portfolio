@@ -1,0 +1,73 @@
+---
+const { text, rgbaColor, hexColor } = Astro.props;
+---
+<style define:vars={{rgbaColor, hexColor}}>
+* {
+	font-family: 'Syntha Nova';
+	margin: 50px 0;
+	padding: 0 50px;
+}
+    .line-container {
+		display: flex;
+		align-items: center;
+		background-color: transparent;
+	}
+
+	.line-left,
+	.line-right {
+		flex-grow: 1;
+		border: 0;
+		height: 1px;
+		margin: 0 10px;
+		position: relative;
+	}
+	.line-left {
+		background-image: linear-gradient(
+			to right,
+			rgba(99, 6, 125, 0.1),
+            var(--rgbaColor)
+		);
+	}
+
+	.line-right {
+		background-image: linear-gradient(
+			to left,
+			rgba(99, 6, 125, 0.1),
+            var(--rgbaColor)
+		);
+	}
+
+	.line-left::after,
+	.line-right::before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		background-color: var(--rgbaColor);
+	}
+
+	.line-left::after {
+		right: -5px;
+	}
+
+	.line-right::before {
+		left: -5px;
+	}
+
+	.line-text {
+		display: inline-block;
+		width: 250px;
+		text-align: center;
+		font-weight: normal;
+		color: white;
+		font-size: 32px;
+	}
+</style>
+<div class="line-container">
+    <hr class="line-left" />
+    <span class="line-text">{text}</span>
+    <hr class="line-right" />
+</div>

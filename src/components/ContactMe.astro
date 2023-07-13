@@ -1,0 +1,56 @@
+<style>
+    * {
+        margin-bottom: 50px;
+    }
+    .contactme_container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .contactme_title {
+        font-family: "Syntha Nova";
+        font-size: 32px;
+        margin-bottom: 0;
+    }
+    .contactme_subtitle {
+        color: #0380D4;
+    }
+    .contactme_form {
+        display: flex;
+        flex-direction: column;
+        width: 600px;
+      
+        >input[type="email"] {
+            border-radius: 6.415px;
+            background-color: #2B2B3A;
+            padding: 15px;
+            border-width: 0;
+            color: white;
+        }
+        >textarea {
+            border-radius: 6.415px;
+            background-color: #2B2B3A;
+            padding: 15px;
+            margin: 10px 0;
+            border-width: 0;
+            color: white;
+        }
+        >button.contactme_btnForm{
+            border-radius: 6.415px;
+            background: linear-gradient(90deg, #63067d 6.3%, #0074c4 97.24%);
+            padding: 15px;
+            color: white;
+            border-width: 0;
+            font-family: 'Syntha Nova';
+        }
+    }
+</style>
+<div class="contactme_container">
+    <p class="contactme_title">Contáctame</p>
+    <p class="contactme_subtitle">¡Trabajemos juntos en el siguiente proyecto!</p>
+    <form class="contactme_form" action="https://formsubmit.co/diegocc.prg@gmail.com" method="POST">
+        <input type="email" name="email" placeholder="Ingresa tu correo..." required/>
+        <textarea rows="8" name="text" placeholder="Ingresa un mensaje..." required></textarea>
+        <button class="contactme_btnForm" type="submit">Enviar</button>
+    </form>
+</div>
