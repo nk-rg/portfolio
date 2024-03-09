@@ -56,18 +56,9 @@ const { text, rgbaColor, hexColor } = Astro.props;
 	.line-right::before {
 		left: -5px;
 	}
-
-	.line-text {
-		display: inline-block;
-		width: 250px;
-		text-align: center;
-		font-weight: normal;
-		color: white;
-		font-size: 32px;
-	}
 </style>
 <div class="line-container">
     <hr class="line-left" />
-    <span class="line-text">{text}</span>
+    <span class="inline-block text-white text-2xl text-center">{text}</span>
     <hr class="line-right" />
 </div>

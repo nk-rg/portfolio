@@ -1,0 +1,20 @@
+---
+let { name, url, description } = Astro.props;
+---
+
+<div class="h-full box-border bg-[#151523] rounded p-[20px] flex flex-col">
+  <img class="h-[150px]" src="" alt={`imagen de proyecto ` + name} />
+  <h3 class="max-w-full text-[#0380D4] uppercase text-lg text-start">{name}</h3>
+  <div class="h-[90px]">
+    <p class="max-h-full truncate overflow-ellipsis text-wrap text-start">
+      {description}
+    </p>
+  </div>
+  <a href="#" target="_blank" class="grow self-end flex items-center text-[#C16AE5]"
+    >Visitar sitio<img
+    class="ml-2"
+      src="flecha-visitarsitio.svg"
+      alt="triangle with all three sides equal"
+    /></a
+  >
+</div>

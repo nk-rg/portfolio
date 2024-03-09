@@ -1,0 +1,97 @@
+---
+import ProjectItem from "./ProjectItem.astro";
+
+const PROJECTS = [
+  {
+    name: "tetris javafx",
+    description:
+      "Juego de tetris desarrollado en JavaFX aplicando patrones de diseño.",
+  },
+  {
+    name: "snake",
+    description: "Juego de Snake usando Java Swing",
+  },
+  {
+    name: "snake",
+    description: "Juego de Snake usando Java Swing",
+  },
+  {
+    name: "snake",
+    description: "Juego de Snake usando Java Swing",
+  },
+  {
+    name: "snake",
+    description: "Juego de Snake usando Java Swing",
+  },
+  {
+    name: "snake",
+    description: "Juego de Snake usando Java Swing",
+  },
+];
+---
+
+<style>
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+
+  .slide {
+    flex: 0 0 calc(33.33% - 10px);
+    text-align: center;
+    box-sizing: border-box;
+    margin-right: 10px;
+  }
+</style>
+<script>
+  const slider = document.querySelector(".slider");
+  const slides = document.querySelectorAll(".slide");
+  const slideWidth = slides[0].clientWidth + 10;
+  const visibleSlides = 3;
+
+  let index = 0;
+
+  function moveSlide() {
+    slider.style.transform = `translateX(-${slideWidth * index}px)`;
+  }
+
+  document.getElementById("next").addEventListener("click", function () {
+    if (index < slides.length - visibleSlides) {
+      index++;
+      moveSlide();
+    }
+  });
+
+  document.getElementById("prev").addEventListener("click", function () {
+    if (index > 0) {
+      index--;
+      moveSlide();
+    }
+  });
+</script>
+<div class="relative w-8/12 mx-auto h-80">
+  <div class="relative slider-container container overflow-hidden h-full">
+    <div class="relative slider h-full">
+      {
+        PROJECTS.map(({ name, description }) => (
+          <div class="slide">
+            <ProjectItem name={name} description={description} />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+  <button class="absolute top-1/2 -translate-y-1/2 z-10 -left-[90px]" id="prev"
+    ><img
+      src="flecha-anterior.svg"
+      alt="triangle with all three sides equal"
+    /></button
+  >
+
+  <button class="absolute top-1/2 -translate-y-1/2 z-10 -right-[90px]" id="next"
+    ><img
+      src="flecha-siguiente.svg"
+      alt="triangle with all three sides equal"
+    /></button
+  >
+</div>

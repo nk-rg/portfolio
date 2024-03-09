@@ -2,102 +2,86 @@
 import Header from "../components/Header.astro";
 import LineSeparator from "../components/LineSeparator.astro";
 import About from "../components/About.astro";
-import Education from "../components/Education.astro";
-import ContactMe from "../components/ContactMe.astro"
+import Experience from "../components/Experience.astro";
+import Projects from "../components/Projects.astro";
+import ContactMe from "../components/ContactMe.astro";
 import "../../public/normalize.css";
 ---
 
 <style>
-	@font-face {
-		font-family: 'CONSOLA';
-		src: url('/fonts/CONSOLA.TTF') format('truetype');
-	}
-	@font-face {
-		font-family: 'Syntha Nova';
-		src: url('/fonts/Syntha Nova.ttf') format('truetype');
-	}
-	* {
-		background-color: #000011;
-		font-family: 'CONSOLA', "Courier New";
-		color: white;
-	}
-	img {
-		width: 100%;
-		object-fit: contain;
-	}
-	.container {
-		position: relative;
-		background-color: transparent;
-	}
-	.text-overlay {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		text-align: center;
-		color: #ffffff;
-		background-color: transparent;
-		font-size: 24px;
-	}
-	.text-overlay img {
-		width: 200px;
-		height: 200px;
-		border-radius: 50%;
-		background-color: white;
-		color: black;
-	}
-	.little-text {
-		background-color: transparent;
-		font-size: 45px;
-		color: #fff;
-		margin-top: 15px;
-		margin-bottom: 0;
-		display: inline-block;
-		margin-right: 15px;
-		font-family: 'Syntha Nova';
-	}
-	.name-text {
-		background-color: transparent;
-		font-size: 45px;
-		color: #0380d4;
-		margin-top: 5px;
-		margin-bottom: 0;
-		font-family: 'Syntha Nova';
-		word-spacing: 0;
-	}
-	.medium-text {
-		background-color: transparent;
-		font-size: 18px;
-		margin-top: 5px;
-		margin-bottom: 0;
-		font-size: 18px;
-	}
+  @font-face {
+    font-family: "CONSOLA";
+    src: url("/fonts/CONSOLA.TTF") format("truetype");
+  }
+  @font-face {
+    font-family: "Syntha Nova";
+    src: url("/fonts/Syntha Nova.ttf") format("truetype");
+  }
+  * {
+    font-family: "CONSOLA", "Courier New";
+  }
+  html {
+    background-color: #000011;
+    scroll-behavior: smooth;
+    color: white;
+  }
+  .anchor {
+    display: block;
+    height: 30px;
+    margin-top: -30px;
+    visibility: hidden;
+  }
 </style>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Portafolio web</title>
-	</head>
-	<body>
-		<Header />
-		<div class="container">
-			<img src="imgs/FotoPrincipal.png" alt="Image" />
-			<div class="text-overlay">
-				<img src="favicon.svg" />
-				<p class="name-text">
-					<span class="little-text">Hola, soy</span>Diego!🐱
-				</p>
-				<p class="medium-text">Desarrollador FullStack Java/Angular</p>
-			</div>
-		</div>
-		<LineSeparator text="Sobre mi" rgbaColor="rgba(99, 6, 125, 1)"/>
-		<About/>
-		<LineSeparator text="Formacion" rgbaColor="rgba(0, 128, 212, 1)"/>
-		<Education/>
-		<LineSeparator text="Habilidades blandas" rgbaColor="rgba(99, 6, 125, 1)"/>
-		<ContactMe/>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Portafolio web</title>
+  </head>
+  <body>
+    <Header />
+    <div class="relative">
+      <img
+        class="z-10 w-full object-contain"
+        src="imgs/FotoPrincipal.png"
+        alt="Image"
+      />
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex w-full align-middle justify-center"
+      >
+        <img class="w-sm rounded w-full max-w-48 h-auto" src="favicon.svg" />
+        <div class="bg-transparent mx-0 my-auto">
+          <p class="md:text-5xl sm:text-3xl font-extrabold [word-spacing:-10px]">
+            Hola, soy Diego!🐱
+          </p>
+          <p class="mt-3 text-lg leading-5">
+            +3 años de experiencia. <br />
+            <span class="text-[#C16AE5] font-semibold"
+              >Desarrollador de sistemas de información.
+            </span><br /> Especializado en el desarollo de sistemas web.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <span class="anchor" id="education"></span>
+  <LineSeparator text="Experiencia laboral" rgbaColor="rgba(0, 128, 212, 1)" />
+  <Experience />
+
+  <LineSeparator text="Proyectos" rgbaColor="rgba(0, 128, 212, 1)" />
+  <Projects />
+
+  <span class="anchor" id="about"></span>
+  <LineSeparator text="Sobre mí" rgbaColor="rgba(99, 6, 125, 1)" />
+  <About />
+
+  <span class="anchor" id="abilities"></span>
+  <LineSeparator text="Habilidades blandas" rgbaColor="rgba(99, 6, 125, 1)" />
+  <span class="anchor" id="projects"></span>
+
+  <span class="anchor" id="contactme"></span>
+  <ContactMe />
 </html>

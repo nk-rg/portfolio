@@ -15,6 +15,7 @@
 		left: 0;
         font-size: 18px;
         font-weight: 400;
+        z-index: 100;
     }
 
     .menu-icon {
@@ -103,25 +104,30 @@
         margin-right: 5px;
     }
 </style>
+<script>
+    function goTo() {
+        console.log("going to")
+    }
+</script>
 <header>
 
     <img src="imgs/IconoDico.svg" width="80" height="80" />
     <nav class="navigation">
         <ul class="links">
             <li class="link__item" style="color: white">
-                <a class="underlying" href="#">Sobre mi</a>
+                <a class="underlying" href="#about">Sobre mi</a>
             </li>
             <li class="link__item" style="color: white">
-                <a href="#">Formacion</a>
+                <a  href="#education">Formacion</a>
             </li>
             <li class="link__item" style="color: white">
-                <a href="#">Habilidades</a>
+                <a href="#abilities">Habilidades</a>
             </li>
             <li class="link__item" style="color: white">
-                <a href="#">Proyectos</a>
+                <a href="#projects">Proyectos</a>
             </li>
             <li class="link__item" style="color: white">
-                <a href="#">Contacto</a>
+                <a href="#contactme">Contacto</a>
             </li>
         </ul>
     </nav>

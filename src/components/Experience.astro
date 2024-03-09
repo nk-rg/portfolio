@@ -1,0 +1,30 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCIE = [
+  {
+    date: "Septiembre 2023 - Noviembre 2023",
+    title: "Mid Java Developer",
+    company: "Whiz, A 10Pearls company",
+    description:
+      "Responsable de adaptar nuevos procesos en la lógica de negocio del microservicio encargado de gestionar la orden de un e-commerce. Creación de pruebas unitarias y realizar la revisión del codigo para identificar y mitigar vulnerabilidades.",
+  },
+  {
+    date: "Octubre 2020 - Septiembre 2023",
+    title: "SSR FullStack Java/Angular",
+    company: "SINTAD",
+    description:
+      "Responsable de la plataforma, componentes y utilidades para la creación y desarrollo de aplicaciones web. Mejora de un 30% en la entrega de software. Implantación de medidas de integración continua y despliegue con A/B testing en más de 15 equipos.",
+  },
+]
+---
+<div class="w-8/12 mx-auto container">
+    <ol class="mt-16">
+      {
+        EXPERIENCIE.map((experiencie) => (
+          <li class="">
+            <ExperienceItem {...experiencie} />
+          </li>
+        ))
+      }
+    </ol>
+</div>
