@@ -40,13 +40,14 @@ const PROJECTS = [
     flex: 0 0 calc(33.33% - 10px);
     text-align: center;
     box-sizing: border-box;
-    margin-right: 10px;
   }
 </style>
 <script>
+  const container = document.querySelector(".slider-container");
   const slider = document.querySelector(".slider");
   const slides = document.querySelectorAll(".slide");
-  const slideWidth = slides[0].clientWidth + 10;
+  
+  const slideWidth = container.clientWidth / 3;
   const visibleSlides = 3;
 
   let index = 0;
@@ -55,14 +56,14 @@ const PROJECTS = [
     slider.style.transform = `translateX(-${slideWidth * index}px)`;
   }
 
-  document.getElementById("next").addEventListener("click", function () {
+  document.getElementById("next").addEventListener("click", () => {
     if (index < slides.length - visibleSlides) {
       index++;
       moveSlide();
     }
   });
 
-  document.getElementById("prev").addEventListener("click", function () {
+  document.getElementById("prev").addEventListener("click", () => {
     if (index > 0) {
       index--;
       moveSlide();
@@ -70,11 +71,11 @@ const PROJECTS = [
   });
 </script>
 <div class="relative w-8/12 mx-auto h-80">
-  <div class="relative slider-container container overflow-hidden h-full">
+  <div class="relative mx-auto slider-container container overflow-hidden h-full">
     <div class="relative slider h-full">
       {
         PROJECTS.map(({ name, description }) => (
-          <div class="slide">
+          <div class="slide mr-[10px]">
             <ProjectItem name={name} description={description} />
           </div>
         ))
